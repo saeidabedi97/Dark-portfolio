@@ -11,12 +11,17 @@
   "dependencies": {
     "@react-three/drei": "^9.24.0",
     "@react-three/fiber": "^8.6.0",
+    "@react-three/postprocessing": "^2.6.2",
     "@sanity/client": "^3.3.3",
     "@sanity/image-url": "^1.0.1",
+    "bootstrap": "^5.2.0",
     "next": "12.2.5",
     "next-sanity": "^0.8.2",
+    "postprocessing": "^6.28.7",
     "react": "18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
+    "reakit-utils": "^0.15.2",
     "three": "^0.143.0"
   },
   "devDependencies": {

@@ -18,9 +18,9 @@ export function MyName(props) {
           receiveShadow
           geometry={nodes.text.geometry}
           material={nodes.text.material}
-          position={[-5, 2, 0]}
+          position={[-2, 2, 0]}
           rotation={[Math.PI / 2, 0, 0]}
-          scale={2.0}
+          scale={0.75}
         />
       </group>
     </group>

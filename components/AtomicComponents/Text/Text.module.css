@@ -1,0 +1,61 @@
+/* formula to find rem ---> FontSize / baseFontSize * 1rem */
+/*formula to find min for clamp ---> mobileFontSize / baseFontSize * 1 rem*/
+/*formula to find ideal size for clamp ---> desktopFontSize / 1440 * 100 */
+/*formula to find max for clamp ---> desktopFontSize / baseFontSize * 1rem*/
+
+.heading1 {
+  font-size: calc(48 / var(--base-font-size) * 1rem);
+  font-size: clamp(3rem, 7.2vw, 6rem);
+  line-height: 0.96153846;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.heading2 {
+  font-size: calc(32 / var(--base-font-size) * 1rem);
+  font-size: clamp(2.5rem, 4.4vw, 3rem);
+  line-height: 1;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.heading3 {
+  font-size: calc(26 / var(--base-font-size) * 1rem);
+  font-size: clamp(1.56rem, 1.8vw, 1.6rem);
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.heading4 {
+  font-size: calc(22 / var(--base-font-size) * 1rem);
+  font-size: clamp(1.12rem, 1.5vw, 1.37rem);
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.heading5 {
+  font-size: calc(16 / var(--base-font-size) * 1rem);
+  font-size: clamp(1rem, 1.11vw, 1rem);
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.pLarge {
+  font-size: calc(26 / var(--base-font-size) * 1rem);
+  font-size: clamp(1.37rem, 1.8vw, 1.62rem);
+  font-family: "Open Sans", sans-serif;
+}
+
+.pMedium {
+  font-size: calc(22 / var(--base-font-size) * 1rem);
+  font-size: clamp(1.12rem, 1.52vw, 1.37rem);
+  font-family: "Open Sans", sans-serif;
+}
+
+.pSmall {
+  font-size: calc(16 / 16 * 1rem);
+  font-size: clamp(1, 1.1vw, 1.1rem);
+  font-family: "Open Sans", sans-serif;
+}
+
+.sectionTitle {
+  font-size: calc(32 / var(--base-font-size) * 1rem);
+  font-size: clamp(2.5rem, 4.4vw, 3rem);
+  line-height: 1;
+  font-family: "Source Sans Pro", sans-serif;
+}
