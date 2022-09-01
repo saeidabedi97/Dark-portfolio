@@ -21,7 +21,8 @@
     "**/*.tsx",
     "pages/allposts.js",
     "client.js",
-    "pages/index.tsx"
+    "pages/index.tsx",
+    "components/AtomicComponents/Floor/Floor.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -10,7 +10,10 @@ import {
 import { KernelSize } from "postprocessing";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader";
+import { Mesh } from "three";
+import { extend } from "@react-three/fiber";
 
+extend({ Canvas });
 function Triangle({ color, ...props }) {
   const ref = useRef();
   const [r] = useState(() => Math.random() * 10000);
@@ -68,7 +71,7 @@ function Ground(props) {
           metalness={0}
           roughnessMap={floor}
           normalMap={normal}
-          normalScale={[2, 2]}
+          // normalScale={[2, 2]}
           {...props}
         />
       )}
@@ -76,7 +79,7 @@ function Ground(props) {
   );
 }
 
-export default function App() {
+export default function Scene() {
   return (
     <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }}>
       <color attach="background" args={["black"]} />

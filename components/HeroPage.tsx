@@ -1,7 +1,10 @@
 import NavBar from "./AtomicComponents/Navbar/NavBar";
 import { MyName } from "./AtomicComponents/3DModel/MyName";
 import { Environment, OrbitControls } from "@react-three/drei";
+import { extend } from "@react-three/fiber";
+
 import { Canvas } from "@react-three/fiber";
+
 import {
   Heading1,
   Heading2,
@@ -12,7 +15,9 @@ import {
   PMedium,
   PSmall,
 } from "./AtomicComponents/Text/Text";
-import Floor from "./AtomicComponents/Floor/Floor";
+import Scene from "./AtomicComponents/Scene/Scene";
+
+extend({ Canvas });
 
 /*create buttons, colors, icons for style guide */
 
@@ -54,7 +59,7 @@ export default function HeroPage() {
             <meshStandardMaterial color="white" roughness={0.75} />
           </mesh>
           {/* <MyName /> */}
-          <Floor />
+          <Scene />
           <spotLight
             angle={12}
             color="orange"
