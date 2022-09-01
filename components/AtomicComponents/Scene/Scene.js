@@ -10,16 +10,12 @@ import {
 import { KernelSize } from "postprocessing";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader";
-import { Mesh } from "three";
-import { extend } from "@react-three/fiber";
 
-extend({ Canvas });
 function Triangle({ color, ...props }) {
   const ref = useRef();
   const [r] = useState(() => Math.random() * 10000);
   useFrame(
     (_) =>
-      ref.current &&
       (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10)
   );
   const { paths: [path] } = useLoader(SVGLoader, '/triangle.svg') // prettier-ignore
@@ -46,14 +42,12 @@ function Rig({ children }) {
   const { camera, mouse } = useThree();
   useFrame(() => {
     camera.position.lerp(vec.set(mouse.x * 2, 0, 3.5), 0.05);
-    if (ref.current) {
-      ref.current.position.lerp(vec.set(mouse.x * 1, mouse.y * 0.1, 0), 0.1);
-      ref.current.rotation.y = THREE.MathUtils.lerp(
-        ref.current.rotation.y,
-        (-mouse.x * Math.PI) / 20,
-        0.1
-      );
-    }
+    ref.current.position.lerp(vec.set(mouse.x * 1, mouse.y * 0.1, 0), 0.1);
+    ref.current.rotation.y = THREE.MathUtils.lerp(
+      ref.current.rotation.y,
+      (-mouse.x * Math.PI) / 20,
+      0.1
+    );
   });
   return <group ref={ref}>{children}</group>;
 }
@@ -71,7 +65,7 @@ function Ground(props) {
           metalness={0}
           roughnessMap={floor}
           normalMap={normal}
-          // normalScale={[2, 2]}
+          normalScale={[2, 2]}
           {...props}
         />
       )}
@@ -79,7 +73,7 @@ function Ground(props) {
   );
 }
 
-export default function Scene() {
+export default function App() {
   return (
     <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }}>
       <color attach="background" args={["black"]} />
@@ -123,7 +117,7 @@ export default function Scene() {
             position-y={-0.8}
           />
         </Rig>
-        <EffectComposer multisampling={8}>
+        {/* <EffectComposer multisampling={8}>
           <Bloom
             kernelSize={3}
             luminanceThreshold={0}
@@ -136,7 +130,7 @@ export default function Scene() {
             luminanceSmoothing={0}
             intensity={0.5}
           />
-        </EffectComposer>
+        </EffectComposer> */}
       </Suspense>
       <CameraShake
         yawFrequency={0.2}

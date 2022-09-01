@@ -4,10 +4,17 @@
 /*formula to find max for clamp ---> desktopFontSize / baseFontSize * 1rem*/
 
 .heading1 {
-  font-size: calc(48 / var(--base-font-size) * 1rem);
   font-size: clamp(3rem, 7.2vw, 6rem);
   line-height: 0.96153846;
   font-family: "Source Sans Pro", sans-serif;
+  position: absolute;
+  color: wheat;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  top: 50%;
+  /* left: 50%; */
+  transform: translate(0, -50%);
 }
 
 .heading2 {
