@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function AboutMe({ posts }: Props) {
-  console.log(posts);
+  // console.log(posts[0].body);
 
   return (
     <div>
@@ -35,7 +35,7 @@ export default function AboutMe({ posts }: Props) {
             </MyContainer>
           </div>
           <div className={s.aboutMeDetails}>
-            <PMedium>{JSON.stringify(post.body)}</PMedium>
+            <PortableText value={post.body} />
           </div>
         </div>
       ))}
