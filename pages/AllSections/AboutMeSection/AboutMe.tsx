@@ -35,9 +35,9 @@ export default function AboutMe({ posts }: Props) {
               />
             </MyContainer>
           </div>
-          <PMedium className={s.aboutMeDetails}>
+          <div className={s.aboutMeDetails}>
             <PortableText value={post.body} className={s.aboutMeText} />
-          </PMedium>
+          </div>
         </div>
       ))}
     </section>
