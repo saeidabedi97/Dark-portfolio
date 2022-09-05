@@ -2,16 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { sanityClient, urlFor } from "../client";
-import { Post } from "../typings";
 import Link from "next/link";
-import HeroPage from "../components/HeroPage";
-
+import HeroPage from "./AllSections/HeroPage/HeroPage";
+import { Post } from "../pages/AllSections/AboutMeSection/typings";
 interface Props {
   posts: Post[];
 }
 
 const Home: NextPage = ({ posts }: Props) => {
-  console.log(posts);
   return (
     <div>
       <Head>
@@ -39,19 +37,8 @@ const Home: NextPage = ({ posts }: Props) => {
         ></link>
       </Head>
       <div>
-        <HeroPage />
+        <HeroPage posts={posts} />
       </div>
-      {/* <div>
-        {posts.map((post) => (
-          <Link key={post._id} href={`/post/${post.slug}`}>
-            <div>
-              <h1>{post.title}</h1>
-              <h2>{post.description}</h2>
-              <></>
-            </div>
-          </Link>
-        ))}
-      </div> */}
     </div>
   );
 };
@@ -60,13 +47,12 @@ export const getServerSideProps = async () => {
   const query = `*[_type == "post"]{
   _id,
   title,
-  author->{
-  name,
-  image
-},
-}`;
+  body,
+  mainImage
+}
+`;
   const posts = await sanityClient.fetch(query);
-
+  console.log("posts", posts);
   return {
     props: {
       posts,

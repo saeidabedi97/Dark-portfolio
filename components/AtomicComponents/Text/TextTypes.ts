@@ -1,3 +1,4 @@
+import React from "react";
 import { As, PropsWithAs } from "reakit-utils";
 
 export type ScaleType = {

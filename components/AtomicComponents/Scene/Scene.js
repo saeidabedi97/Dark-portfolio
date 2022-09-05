@@ -76,7 +76,7 @@ function Ground(props) {
 export default function App() {
   return (
     <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }}>
-      <color attach="background" args={["black"]} />
+      {/* <color attach="background" args={["black"]} /> */}
       <ambientLight />
       <OrbitControls
         enableZoom={false}

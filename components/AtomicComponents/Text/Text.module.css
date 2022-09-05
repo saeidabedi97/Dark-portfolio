@@ -7,14 +7,6 @@
   font-size: clamp(3rem, 7.2vw, 6rem);
   line-height: 0.96153846;
   font-family: "Source Sans Pro", sans-serif;
-  position: absolute;
-  color: wheat;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-  top: 50%;
-  /* left: 50%; */
-  transform: translate(0, -50%);
 }
 
 .heading2 {
@@ -65,4 +57,14 @@
   font-size: clamp(2.5rem, 4.4vw, 3rem);
   line-height: 1;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+.button {
+  border: 3px solid #ff9203;
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(16 / 16 * 1rem);
+  font-size: clamp(1, 1.1vw, 1.1rem);
+  background: none;
+  color: white;
+  border-radius: 10%;
 }

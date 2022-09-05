@@ -1,5 +1,5 @@
 import s from "./Container.module.css";
 
-export const Container = ({ style = {}, ...props }) => {
+export const MyContainer = ({ style = {}, ...props }) => {
   return <div className={s.container} {...props} />;
 };

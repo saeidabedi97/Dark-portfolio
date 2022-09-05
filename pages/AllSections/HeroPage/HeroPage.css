@@ -1,0 +1,29 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.name-title {
+  color: rgb(248, 253, 252);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.job-title {
+  display: flex;
+  color: rgb(248, 253, 252);
+  width: 100%;
+  justify-content: center;
+}
+.scene-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}

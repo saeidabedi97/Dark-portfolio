@@ -20,9 +20,11 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/allposts.js",
-    "client.js",
+    "client.tsx",
     "pages/index.tsx",
-    "components/AtomicComponents/Floor/Floor.jsx"
+    "components/AtomicComponents/Floor/Floor.jsx",
+    "pages/AllSections/AboutMeSection/AboutMe.js",
+    "components/AtomicComponents/Text/Text.js"
   ],
   "exclude": ["node_modules"]
 }
