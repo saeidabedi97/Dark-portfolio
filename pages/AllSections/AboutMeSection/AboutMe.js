@@ -11,11 +11,11 @@ import { urlFor } from "../../../client";
 import { MyContainer } from "../../../components/AtomicComponents/Container/Container";
 import s from "../AboutMeSection/AboutMe.module.css";
 
-interface Props {
-  posts: Post[];
-}
+// interface Props {
+//   posts: Post[];
+// }
 
-export default function AboutMe({ posts }: Props) {
+export default function AboutMe({ posts }) {
   console.log(posts);
 
   return (
@@ -27,7 +27,7 @@ export default function AboutMe({ posts }: Props) {
 
             <MyContainer className={s.imageContainer}>
               <Image
-                src={urlFor(post.mainImage).url()!}
+                src={urlFor(post.mainImage).url()}
                 alt="my picture"
                 width={"2898px"}
                 height={"4096px"}
