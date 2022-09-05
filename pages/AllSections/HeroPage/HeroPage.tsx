@@ -27,6 +27,8 @@ export default function HeroPage({ posts }) {
       style={{
         backgroundColor: "black",
         position: "relative",
+        minHeight: "100vh",
+        minWidth: "100vw",
       }}
     >
       <NavBar />
@@ -34,7 +36,8 @@ export default function HeroPage({ posts }) {
       {/* <MyName /> */}
       <div
         style={{
-          height: "100vh",
+          minHeight: "100vh",
+          minWidth: "100vw",
           position: "relative",
           display: "flex",
           flexDirection: "column",

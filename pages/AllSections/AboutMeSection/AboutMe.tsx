@@ -16,14 +16,15 @@ interface Props {
 }
 
 export default function AboutMe({ posts }: Props) {
-  // console.log(posts[0].body);
+  console.log(posts);
 
   return (
-    <div>
+    <section className={s.aboutMeSection}>
       {posts.map((post, index) => (
         <div key={index} className={s.aboutMeContainer}>
           <div className={s.aboutMeFigureSection}>
             <Heading2 className={s.sectionTitle}>{post.title}</Heading2>
+
             <MyContainer className={s.imageContainer}>
               <Image
                 src={urlFor(post.mainImage).url()!}
@@ -34,11 +35,11 @@ export default function AboutMe({ posts }: Props) {
               />
             </MyContainer>
           </div>
-          <div className={s.aboutMeDetails}>
-            <PortableText value={post.body} />
-          </div>
+          <PMedium className={s.aboutMeDetails}>
+            <PortableText value={post.body} className={s.aboutMeText} />
+          </PMedium>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

@@ -11,4 +11,7 @@ body {
 
 :root {
   --base-font-size: 16;
+  --white: #ffffff;
+  --american-orange: #ff8800;
+  --black: #000000;
 }
