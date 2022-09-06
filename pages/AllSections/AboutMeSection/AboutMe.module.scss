@@ -83,20 +83,23 @@ $breakpoint-xxl: 1400px;
 
   &__img {
     display: block;
-    max-width: 100%;
     padding-inline: 3rem;
 
     @include breakpoint(sm) {
       padding: unset;
     }
 
+    /* @todo: max-width and margin-left and margin-right to center the content */
     &Container {
       margin-bottom: 1rem;
-
+      max-width: 50%;
+      
       @include breakpoint(sm) {
         max-width: 33.33%;
         margin-bottom: unset;
+        width: 100%;
       }
+
     }
   }
 

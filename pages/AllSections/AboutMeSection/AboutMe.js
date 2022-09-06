@@ -29,10 +29,10 @@ export default function AboutMe({ posts }) {
                 <Image
                   src={urlFor(post.mainImage).url()}
                   alt="my picture"
-                  layout={"responsive "}
-                  // className={s.aboutMe__img}
-                  width={"2898px"}
-                  height={"4096px"}
+                  layout={"responsive"}
+                  className={s.aboutMe__img}
+                  width={2898}
+                  height={4096}
                 />
               </div>
               <div className={s.aboutMe__txtContainer}>
