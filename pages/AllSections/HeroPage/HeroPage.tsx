@@ -26,7 +26,7 @@ export default function HeroPage({ posts }) {
     <div
       style={{
         backgroundColor: "black",
-        f, // position: "relative",
+        // position: "relative",
         // minHeight: "100vh",
         // minWidth: "100vw",
       }}
