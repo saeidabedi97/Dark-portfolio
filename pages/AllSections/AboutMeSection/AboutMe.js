@@ -26,11 +26,13 @@ export default function AboutMe({ posts }) {
             <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>
               <div className={s.aboutMe__imgContainer}>
-                <img
+                <Image
                   src={urlFor(post.mainImage).url()}
                   alt="my picture"
-                  layout={"responsive"}
-                  className={s.aboutMe__img}
+                  layout={"responsive "}
+                  // className={s.aboutMe__img}
+                  width={"2898px"}
+                  height={"4096px"}
                 />
               </div>
               <div className={s.aboutMe__txtContainer}>
