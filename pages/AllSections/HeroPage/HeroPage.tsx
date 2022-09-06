@@ -26,9 +26,9 @@ export default function HeroPage({ posts }) {
     <div
       style={{
         backgroundColor: "black",
-        position: "relative",
-        minHeight: "100vh",
-        minWidth: "100vw",
+        f, // position: "relative",
+        // minHeight: "100vh",
+        // minWidth: "100vw",
       }}
     >
       <NavBar />
@@ -36,8 +36,6 @@ export default function HeroPage({ posts }) {
       {/* <MyName /> */}
       <div
         style={{
-          minHeight: "100vh",
-          minWidth: "100vw",
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -53,9 +51,8 @@ export default function HeroPage({ posts }) {
         <div className="scene-container">
           <Scene />
         </div>
-
-        <AboutMe posts={posts} />
       </div>
+      <AboutMe posts={posts} />
     </div>
   );
 }

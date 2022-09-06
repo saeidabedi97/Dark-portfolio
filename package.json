@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-three-fiber": "^6.0.13",
     "reakit-utils": "^0.15.2",
+    "sass": "^1.54.8",
     "three": "^0.143.0"
   },
   "devDependencies": {

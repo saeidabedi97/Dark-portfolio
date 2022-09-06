@@ -5,11 +5,11 @@ import {
   Heading3,
   PMedium,
 } from "../../../components/AtomicComponents/Text/Text";
-import { Post } from "./typings";
+// import { Post } from "./typings";
 import imageUrlBuilder from "@sanity/image-url";
 import { urlFor } from "../../../client";
 import { MyContainer } from "../../../components/AtomicComponents/Container/Container";
-import s from "../AboutMeSection/AboutMe.module.css";
+import s from "../AboutMeSection/AboutMe.module.scss";
 
 // interface Props {
 //   posts: Post[];
@@ -19,24 +19,22 @@ export default function AboutMe({ posts }) {
   console.log(posts);
 
   return (
-    <section className={s.aboutMeSection}>
+    <section className={s.aboutMe__section}>
       {posts.map((post, index) => (
-        <div key={index} className={s.aboutMeContainer}>
-          <div className={s.aboutMeFigureSection}>
-            <Heading2 className={s.sectionTitle}>{post.title}</Heading2>
-
-            <MyContainer className={s.imageContainer}>
-              <Image
+        <div key={index} className={s.aboutMe__container}>
+          <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
+          <div className={s.aboutMe__content}>
+            <div className={s.aboutMe__imgContainer}>
+              <img
                 src={urlFor(post.mainImage).url()}
                 alt="my picture"
-                width={"2898px"}
-                height={"4096px"}
                 layout={"responsive"}
+                className={s.aboutMe__img}
               />
-            </MyContainer>
-          </div>
-          <div className={s.aboutMeDetails}>
-            <PortableText value={post.body} className={s.aboutMeText} />
+            </div>
+            <div className={s.aboutMe__txtContainer}>
+              <PortableText value={post.body} />
+            </div>
           </div>
         </div>
       ))}

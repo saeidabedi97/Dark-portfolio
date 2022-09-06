@@ -1,0 +1,110 @@
+$breakpoint-xsm: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+@mixin breakpoint($point) {
+  @if $point == xsm {
+    @media (min-width: $breakpoint-xsm) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media (min-width: $breakpoint-xxl) {
+      @content;
+    }
+  } @else if $point == phone {
+    @media (max-width: $breakpoint-sm) and (min-width: 0px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: $breakpoint-lg) and (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else {
+    @media (min-width: '#{$point}') {
+      @content;
+    }
+  }
+}
+
+.aboutMe {
+  &__section {
+    padding-block: 3rem;
+    z-index: 12;
+    position: relative;
+    backdrop-filter: blur(10px) brightness(0.7);
+  }
+
+  &__container {
+    padding-inline: 0.75rem;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  &__content {
+    @include breakpoint(sm) {
+      display: flex;
+      gap: 2rem;
+    }
+    color: var(--white);
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include breakpoint(sm) {
+      text-align: unset;
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    padding-inline: 3rem;
+
+    @include breakpoint(sm) {
+      padding: unset;
+    }
+
+    &Container {
+      margin-bottom: 1rem;
+
+      @include breakpoint(sm) {
+        max-width: 33.33%;
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  &__txt {
+    &Container {
+      @include breakpoint(md) {
+        max-width: 66.66%;
+      }
+    }
+  }
+}
