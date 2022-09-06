@@ -26,8 +26,8 @@
     "pages/AllSections/AboutMeSection/AboutMe.js",
     "components/AtomicComponents/Text/Text.js"
   ],
-  "exclude": ["node_modules"],
-  "files": [
-    "@types/block-content-to-react.d.ts"
-  ]
+  "exclude": ["node_modules"]
+  // "files": [
+  //   "@types/block-content-to-react.d.ts"
+  // ]
 }

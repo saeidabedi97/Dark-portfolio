@@ -4,7 +4,6 @@ import { Stats } from "@react-three/drei";
 import { extend } from "@react-three/fiber";
 import AboutMe from "../AboutMeSection/AboutMe";
 import { Canvas } from "@react-three/fiber";
-
 import {
   Heading1,
   Heading2,
@@ -34,6 +33,7 @@ export default function HeroPage({ posts }) {
       <NavBar />
       <Stats />
       {/* <MyName /> */}
+
       <div
         style={{
           position: "relative",

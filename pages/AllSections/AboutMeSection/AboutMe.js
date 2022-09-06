@@ -20,24 +20,25 @@ export default function AboutMe({ posts }) {
 
   return (
     <section className={s.aboutMe__section}>
-      {posts.map((post, index) => (
-        <div key={index} className={s.aboutMe__container}>
-          <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
-          <div className={s.aboutMe__content}>
-            <div className={s.aboutMe__imgContainer}>
-              <img
-                src={urlFor(post.mainImage).url()}
-                alt="my picture"
-                layout={"responsive"}
-                className={s.aboutMe__img}
-              />
-            </div>
-            <div className={s.aboutMe__txtContainer}>
-              <PortableText value={post.body} />
+      {posts &&
+        posts.map((post, index) => (
+          <div key={index} className={s.aboutMe__container}>
+            <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
+            <div className={s.aboutMe__content}>
+              <div className={s.aboutMe__imgContainer}>
+                <img
+                  src={urlFor(post.mainImage).url()}
+                  alt="my picture"
+                  layout={"responsive"}
+                  className={s.aboutMe__img}
+                />
+              </div>
+              <div className={s.aboutMe__txtContainer}>
+                <PortableText value={post.body} />
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </section>
   );
 }

@@ -82,11 +82,11 @@ export default function App() {
     >
       {/* <color attach="background" args={["black"]} /> */}
       <ambientLight />
-      <OrbitControls
+      {/* <OrbitControls
         enableZoom={false}
         enablePan={false}
         enableRotate={false}
-      />
+      /> */}
       <Suspense fallback={null}>
         <Rig>
           <Triangle
