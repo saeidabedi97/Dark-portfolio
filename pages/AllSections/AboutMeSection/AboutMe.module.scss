@@ -93,18 +93,20 @@ $breakpoint-xxl: 1400px;
     &Container {
       margin-bottom: 1rem;
       max-width: 50%;
-      
+      margin-left: 25%;
+
       @include breakpoint(sm) {
         max-width: 33.33%;
         margin-bottom: unset;
         width: 100%;
+        margin-left: unset;
       }
-
     }
   }
 
   &__txt {
     &Container {
+      margin-left: 5%;
       @include breakpoint(md) {
         max-width: 66.66%;
       }
