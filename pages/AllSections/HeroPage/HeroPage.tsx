@@ -16,8 +16,10 @@ import {
   Button,
 } from "../../../components/AtomicComponents/Text/Text";
 import Scene from "../../../components/AtomicComponents/Scene/Scene";
+import SkillSection from "../SkillSection/SkillSection";
+import ExprienceSection from "../ExprienceSection/ExprienceSection";
 extend({ Canvas });
-
+import s from "../HeroPage/HeroPage.module.scss";
 /*create buttons, colors, icons for style guide */
 
 export default function HeroPage({ posts }) {
@@ -25,34 +27,31 @@ export default function HeroPage({ posts }) {
     <div
       style={{
         backgroundColor: "black",
-        // position: "relative",
-        // minHeight: "100vh",
-        // minWidth: "100vw",
       }}
     >
       <NavBar />
       <Stats />
-      {/* <MyName /> */}
-
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="hero-container">
-          <Heading1 className="name-title">Saeid Abedi</Heading1>
-          <PLarge className="job-title">FRONTEND DEVELOPER</PLarge>
-          <Button className="cv-button">view cv</Button>
-        </div>
-        <div className="scene-container">
-          <Scene />
+      <div className={s.hero}>
+        <div className={s.hero__container}>
+          <div className={s.hero__container__inner}>
+            <Heading1 className={s.hero__container__title}>
+              Saeid Abedi
+            </Heading1>
+            <PLarge className={s.hero__container__job__text}>
+              FRONTEND DEVELOPER
+            </PLarge>
+            <Button className={s.hero__container__button}>view cv</Button>
+          </div>
+          <div className={s.hero__scene__container}>
+            <Scene />
+          </div>
         </div>
       </div>
       <AboutMe posts={posts} />
+
+      <SkillSection posts={posts} />
+
+      <ExprienceSection />
     </div>
   );
 }
