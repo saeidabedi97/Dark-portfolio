@@ -64,7 +64,7 @@
   font-family: "Open Sans", sans-serif;
   font-size: calc(16 / 16 * 1rem);
   font-size: clamp(1, 1.1vw, 1.1rem);
-  background: none;
   color: white;
-  border-radius: 10%;
+  background-color: #ff9203;
+  border-radius: 5%;
 }

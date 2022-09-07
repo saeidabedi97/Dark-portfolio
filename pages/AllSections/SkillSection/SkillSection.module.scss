@@ -1,0 +1,52 @@
+@import "../../../styles/globalBreakPoints.scss";
+.skill {
+  &__section {
+    position: relative;
+    z-index: 15;
+    display: flex;
+    // padding-left: 15%;
+    top: 10rem;
+    flex-direction: column;
+    backdrop-filter: blur(15px) brightness(0.7);
+  }
+
+  &__title__section {
+    display: flex;
+    flex-direction: column;
+    // text-align: center;
+    align-items: center;
+    gap: 5%;
+    width: 100vw;
+  }
+
+  &__title {
+    color: var(--white);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    // justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @include breakpoint(sm) {
+      display: flex;
+      gap: 2rem;
+    }
+    color: var(--white);
+  }
+
+  &__cards {
+    border: 3px solid var(--american-orange);
+    width: 20vw;
+  }
+
+  &__card {
+    padding: 16px;
+  }
+
+  &__inner__text {
+    color: var(--white);
+  }
+}

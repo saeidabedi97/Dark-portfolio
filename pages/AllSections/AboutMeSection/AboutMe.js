@@ -10,13 +10,18 @@ import imageUrlBuilder from "@sanity/image-url";
 import { urlFor } from "../../../client";
 import { MyContainer } from "../../../components/AtomicComponents/Container/Container";
 import s from "../AboutMeSection/AboutMe.module.scss";
+import { useState } from "react";
 
 // interface Props {
 //   posts: Post[];
 // }
 
 export default function AboutMe({ posts }) {
-  console.log(posts);
+  // console.log(posts[0].body[0].children[0].text);
+
+  const [text, setText] = useState(posts[0].body[0].children[0].text);
+  const textArray = text.split(".");
+  console.log(textArray);
 
   return (
     <section className={s.aboutMe__section}>
@@ -36,7 +41,10 @@ export default function AboutMe({ posts }) {
                 />
               </div>
               <div className={s.aboutMe__txtContainer}>
-                <PortableText value={post.body} />
+                <PMedium>{textArray[0]}.</PMedium>
+                <PMedium>{textArray[1]}.</PMedium>
+                <PMedium>{textArray[2]}.</PMedium>
+                <PMedium>{textArray[3]}.</PMedium>
               </div>
             </div>
           </div>

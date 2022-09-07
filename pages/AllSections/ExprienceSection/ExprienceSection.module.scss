@@ -1,0 +1,92 @@
+@import "../../../styles/globalBreakPoints.scss";
+
+.expSection {
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 12;
+  position: relative;
+  top: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(15px) brightness(0.7);
+
+  &__heading {
+    color: var(--white);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15vh;
+    top: 3rem;
+
+    &__primary {
+      display: flex;
+      //   height: 25vh;
+      flex-direction: column;
+      //   width: 80vw;
+      gap: 5%;
+      align-items: center;
+      @include breakpoint(md) {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      &__title__container {
+        min-width: 15vw;
+        // outline: 5px solid pink;
+      }
+
+      &__title {
+        color: var(--white);
+      }
+
+      &__date {
+        color: var(--white);
+      }
+
+      &__details__container {
+        width: 45vw;
+      }
+
+      &__details {
+        color: var(--white);
+      }
+    }
+
+    &__secondary {
+      display: flex;
+      //   height: 20vh;
+      gap: 5%;
+      flex-direction: column;
+      align-items: center;
+      @include breakpoint(md) {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+      &__title__container {
+        min-width: 15vw;
+      }
+
+      &__title {
+        color: var(--white);
+      }
+
+      &__date {
+        color: var(--white);
+      }
+
+      &__details__container {
+        width: 45vw;
+      }
+
+      &__details {
+        color: var(--white);
+      }
+    }
+  }
+}

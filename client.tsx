@@ -11,12 +11,7 @@ export const config = {
   useCdn: process.env.NODE_ENV == "production",
 };
 
-export const sanityClient = createClient({
-  projectId: "1ks8y5qd",
-  dataset: "production",
-  apiVersion: "2021-10-21", // use a UTC date string
-  useCdn: true, // `false` if you want to ensure fresh data
-});
+export const sanityClient = createClient(config);
 
 export const urlFor = (source: SanityImageSource) =>
   imageUrlBuilder(config).image(source);
