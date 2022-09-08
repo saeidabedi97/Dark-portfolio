@@ -1,7 +1,7 @@
+import { Suspense, lazy } from "react";
 import NavBar from "../../../components/AtomicComponents/Navbar/NavBar";
 import { Stats } from "@react-three/drei";
 import { extend } from "@react-three/fiber";
-import AboutMe from "../AboutMeSection/AboutMe";
 import { Canvas } from "@react-three/fiber";
 import {
   Heading1,
@@ -9,13 +9,20 @@ import {
   Button,
 } from "../../../components/AtomicComponents/Text/Text";
 import Scene from "../../../components/AtomicComponents/Scene/Scene";
-import SkillSection from "../SkillSection/SkillSection";
-import ExprienceSection from "../ExprienceSection/ExprienceSection";
 extend({ Canvas });
 import s from "../HeroPage/HeroPage.module.scss";
-import ProjectSection from "../ProjectSection/ProjectSection";
+const AboutMe = lazy(() => import("../AboutMeSection/AboutMe"));
+const SkillSection = lazy(() => import("../SkillSection/SkillSection"));
+const ProjectSection = lazy(() => import("../ProjectSection/ProjectSection"));
+const ExprienceSection = lazy(
+  () => import("../ExprienceSection/ExprienceSection")
+);
 
-export default function HeroPage({ posts }) {
+export default function HeroPage({ aboutSection, projectSection }) {
+  const loading = () => {
+    return <div style={{ fontSize: "45px", color: "white" }}>Loading...</div>;
+  };
+
   return (
     <div
       style={{
@@ -40,13 +47,20 @@ export default function HeroPage({ posts }) {
           </div>
         </div>
       </div>
-      <AboutMe posts={posts} />
+      <Suspense fallback={loading()}>
+        <AboutMe aboutSection={aboutSection} />
+      </Suspense>
+      <Suspense fallback={loading()}>
+        <SkillSection />
+      </Suspense>
 
-      <SkillSection posts={posts} />
+      <Suspense fallback={loading()}>
+        <ExprienceSection />
+      </Suspense>
 
-      <ExprienceSection />
-
-      <ProjectSection />
+      <Suspense fallback={loading()}>
+        <ProjectSection projectSection={projectSection} />
+      </Suspense>
     </div>
   );
 }

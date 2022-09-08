@@ -8,7 +8,7 @@ import SlideShow from "../../../components/AtomicComponents/ImageSlideShow/Slide
 import { VerticalLine } from "../../../components/AtomicComponents/VerticalLine/VerticalLine";
 import { HorizontalLine } from "../../../components/AtomicComponents/HorizontalLine/HorizontalLine";
 
-export default function SkillSection({ posts }) {
+export default function SkillSection() {
   return (
     <section className={s.skill__section}>
       <div className={s.skill__title__section}>

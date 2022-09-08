@@ -1,13 +1,16 @@
+import { Suspense, lazy } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { sanityClient } from "../client";
 import HeroPage from "./AllSections/HeroPage/HeroPage";
 import { Post } from "../pages/AllSections/AboutMeSection/typings";
+import ProjectSection from "./AllSections/ProjectSection/ProjectSection";
 interface Props {
-  posts: Post[];
+  aboutSection: Post[];
+  projectSection: Post[];
 }
 
-const Home: NextPage = ({ posts }: Props) => {
+const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
   return (
     <div>
       <Head>
@@ -42,25 +45,41 @@ const Home: NextPage = ({ posts }: Props) => {
           justifyContent: "center",
         }}
       >
-        <HeroPage posts={posts} />
+        <Suspense fallback={"loading..."}>
+          <HeroPage
+            aboutSection={aboutSection}
+            projectSection={projectSection}
+          />
+        </Suspense>
       </div>
     </div>
   );
 };
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "post"]{
+  const postsQuery = `*[_type == "AboutMe"]{
   _id,
   title,
   body,
   mainImage
 }
 `;
-  const posts = await sanityClient.fetch(query);
-  console.log("posts", posts);
+  const projectQuery = `*[_type == "Projects"]{
+  _id,
+  title,
+  body,
+  mainImage,
+  progressValue
+}
+`;
+  const aboutSection = await sanityClient.fetch(postsQuery);
+  const projectSection = await sanityClient.fetch(projectQuery);
+  console.log("About me", aboutSection);
+  console.log("project", projectSection);
   return {
     props: {
-      posts,
+      aboutSection,
+      projectSection,
     },
   };
 };

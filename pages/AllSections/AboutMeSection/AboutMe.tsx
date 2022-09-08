@@ -8,17 +8,17 @@ import { urlFor } from "../../../client";
 import s from "../AboutMeSection/AboutMe.module.scss";
 import { useState } from "react";
 
-export default function AboutMe({ posts = [] }) {
-  console.log(posts);
+export default function AboutMe({ aboutSection = [] }) {
+  console.log(aboutSection);
 
-  const text = posts[0]?.body[0]?.children[0]?.text;
+  const text = aboutSection[0]?.body[0]?.children[0]?.text;
   const textArray = text?.split(".");
   // console.log(textArray);
 
   return (
     <section className={s.aboutMe__section}>
-      {posts &&
-        posts.map((post, index) => (
+      {aboutSection &&
+        aboutSection.map((post, index) => (
           <div key={index} className={s.aboutMe__container}>
             <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>

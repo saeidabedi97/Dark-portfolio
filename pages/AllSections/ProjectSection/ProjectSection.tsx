@@ -1,48 +1,100 @@
-import Image from "next/image";
 import { HorizontalLine } from "../../../components/AtomicComponents/HorizontalLine/HorizontalLine";
 import {
+  Button,
   Heading2,
   PMedium,
+  PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
-import { VerticalLine } from "../../../components/AtomicComponents/VerticalLine/VerticalLine";
 import s from "../ProjectSection/ProjectSection.module.scss";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { useInView } from "react-intersection-observer";
+export default function ProjectSection({ projectSection = [] }) {
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
 
-export default function ProjectSection() {
+  console.log(projectSection);
   return (
-    <div className={s.ps}>
+    <section className={s.ps} ref={ref}>
       <div className={s.ps__heading__container}>
         <Heading2 className={s.ps__heading__text}>Projects</Heading2>
         <HorizontalLine />
       </div>
       <div className={s.ps__details}>
+        {/*First card*/}
         <div className={s.ps__details__card1}>
           <div className={s.ps__details__card1__figure__container}>
-            <Image
-              src="/htmlnew.png"
-              alt="project image"
-              width={350}
-              height={350}
-            />
+            <video
+              width="420"
+              height="240"
+              controls={false}
+              autoPlay={true}
+              muted
+              loop
+              preload="none"
+            >
+              <source src="/lamborghini.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className={s.ps__details__card1__text__container}>
-            <PMedium>
-              This work represents a single page website created for harbour
-              space. This page is created only with html, css and vanilla
-              javascript.
-            </PMedium>
-            <ProgressBar now={60} animated label={"60%"} />
+            <PSmall>{projectSection[0]?.body[0]?.children[0]?.text}</PSmall>
+            <ProgressBar>
+              <ProgressBar striped variant="green" now={86.1} key={1} />
+              <ProgressBar variant="warning" now={9.3} key={2} />
+              <ProgressBar striped variant="danger" now={4.6} key={3} />
+            </ProgressBar>
+            <div className={s.ps__details__card1__progress}>
+              <PSmall className={s.ps__details__card1__progress__label1}>
+                JavaScript
+              </PSmall>
+              <PSmall className={s.ps__details__card1__progress__label2}>
+                css
+              </PSmall>
+              <PSmall className={s.ps__details__card1__progress__label3}>
+                html
+              </PSmall>
+            </div>
           </div>
         </div>
-        {/* <div className={s.ps__details__card2}>
-          <div className={s.ps__details__card3_figure_container}></div>
-          <div className={s.ps__details__card3__text__container}></div>
+
+        {/*Second card*/}
+        <div className={s.ps__details__card2}>
+          <div className={s.ps__details__card2__text__container}>
+            <PSmall>{projectSection[0]?.body[0]?.children[0]?.text}</PSmall>
+            <ProgressBar>
+              <ProgressBar striped variant="green" now={86.1} key={1} />
+              <ProgressBar variant="warning" now={9.3} key={2} />
+              <ProgressBar striped variant="danger" now={4.6} key={3} />
+            </ProgressBar>
+            <div className={s.ps__details__card2__progress}>
+              <PSmall className={s.ps__details__card2__progress__label1}>
+                JavaScript
+              </PSmall>
+              <PSmall className={s.ps__details__card2__progress__label2}>
+                css
+              </PSmall>
+              <PSmall className={s.ps__details__card2__progress__label3}>
+                html
+              </PSmall>
+            </div>
+          </div>
+          <div className={s.ps__details__card2__figure__container}>
+            <video
+              width="420"
+              height="240"
+              controls={false}
+              autoPlay={true}
+              muted
+              loop
+              preload="none"
+            >
+              <source src="/portfolio.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
-        <div className={s.ps__details__card3}>
-          <div className={s.ps__details__card3_figure_container}></div>
-          <div className={s.ps__details__card3__text__container}></div>
-        </div> */}
+        <Button className={s.ps__details__button}>Show more...</Button>
       </div>
-    </div>
+    </section>
   );
 }
