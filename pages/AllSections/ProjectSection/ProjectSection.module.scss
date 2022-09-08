@@ -1,0 +1,46 @@
+.ps {
+  position: relative;
+  //   outline: 5px solid red;
+  z-index: 15;
+
+  min-height: 100vh;
+  top: 50vh;
+  backdrop-filter: blur(10px) brightness(0.7);
+
+  &__heading {
+    &__container {
+      //   outline: 5px solid yellow;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__text {
+      color: var(--white);
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__card1 {
+      display: flex;
+      flex-direction: row;
+
+      &__figure__container {
+      }
+
+      &__text__container {
+        height: 350px;
+        outline: 5px solid pink;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+      }
+    }
+  }
+}

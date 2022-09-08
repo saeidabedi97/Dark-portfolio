@@ -1,18 +1,11 @@
 import NavBar from "../../../components/AtomicComponents/Navbar/NavBar";
-import { MyName } from "../../../components/AtomicComponents/3DModel/MyName";
 import { Stats } from "@react-three/drei";
 import { extend } from "@react-three/fiber";
 import AboutMe from "../AboutMeSection/AboutMe";
 import { Canvas } from "@react-three/fiber";
 import {
   Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
   PLarge,
-  PMedium,
-  PSmall,
   Button,
 } from "../../../components/AtomicComponents/Text/Text";
 import Scene from "../../../components/AtomicComponents/Scene/Scene";
@@ -20,7 +13,7 @@ import SkillSection from "../SkillSection/SkillSection";
 import ExprienceSection from "../ExprienceSection/ExprienceSection";
 extend({ Canvas });
 import s from "../HeroPage/HeroPage.module.scss";
-/*create buttons, colors, icons for style guide */
+import ProjectSection from "../ProjectSection/ProjectSection";
 
 export default function HeroPage({ posts }) {
   return (
@@ -52,6 +45,8 @@ export default function HeroPage({ posts }) {
       <SkillSection posts={posts} />
 
       <ExprienceSection />
+
+      <ProjectSection />
     </div>
   );
 }

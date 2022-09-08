@@ -1,27 +1,19 @@
-import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import {
   Heading2,
-  Heading3,
   PMedium,
+  PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
-// import { Post } from "./typings";
-import imageUrlBuilder from "@sanity/image-url";
 import { urlFor } from "../../../client";
-import { MyContainer } from "../../../components/AtomicComponents/Container/Container";
 import s from "../AboutMeSection/AboutMe.module.scss";
 import { useState } from "react";
 
-// interface Props {
-//   posts: Post[];
-// }
+export default function AboutMe({ posts = [] }) {
+  console.log(posts);
 
-export default function AboutMe({ posts }) {
-  // console.log(posts[0].body[0].children[0].text);
-
-  const [text, setText] = useState(posts[0].body[0].children[0].text);
-  const textArray = text.split(".");
-  console.log(textArray);
+  const text = posts[0]?.body[0]?.children[0]?.text;
+  const textArray = text?.split(".");
+  // console.log(textArray);
 
   return (
     <section className={s.aboutMe__section}>
@@ -41,10 +33,10 @@ export default function AboutMe({ posts }) {
                 />
               </div>
               <div className={s.aboutMe__txtContainer}>
-                <PMedium>{textArray[0]}.</PMedium>
-                <PMedium>{textArray[1]}.</PMedium>
-                <PMedium>{textArray[2]}.</PMedium>
-                <PMedium>{textArray[3]}.</PMedium>
+                <PSmall>{textArray[0]}.</PSmall>
+                <PSmall>{textArray[1]}.</PSmall>
+                <PSmall>{textArray[2]}.</PSmall>
+                <PSmall>{textArray[3]}.</PSmall>
               </div>
             </div>
           </div>
