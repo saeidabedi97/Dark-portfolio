@@ -9,13 +9,22 @@ function SlideShow() {
     <div style={{ width: "100vw" }}>
       <Splide
         options={{
-          type: "loop",
+          // type: "loop",
           mediaQuery: "min",
-          gap: "10px",
+          // gap: "5px",
           drag: "free",
           // arrows: false,
           pagination: false,
-          perPage: 3,
+          perPage: 2,
+          breakpoints: {
+            552: {
+              perPage: 3,
+            },
+
+            1000: {
+              perPage: 4,
+            },
+          },
           autoScroll: {
             pauseOnHover: false,
             pauseOnFocus: false,
@@ -31,8 +40,8 @@ function SlideShow() {
             <Image
               src="/javascript.png"
               alt="javascript"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>
@@ -42,8 +51,8 @@ function SlideShow() {
             <Image
               src="/typescript.png"
               alt="typescript"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>
@@ -53,8 +62,8 @@ function SlideShow() {
             <Image
               src="/react.jpg"
               alt="react"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>
@@ -64,8 +73,8 @@ function SlideShow() {
             <Image
               src="/htmlnew.png"
               alt="hmtl"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>
@@ -75,8 +84,8 @@ function SlideShow() {
             <Image
               src="/css.png"
               alt="css"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>
@@ -86,8 +95,8 @@ function SlideShow() {
             <Image
               src="/python.png"
               alt="python"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               layout={"responsive"}
             />
           </div>

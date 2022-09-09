@@ -1,15 +1,5 @@
-@import "../../../styles/globalBreakPoints.scss";
+@import "../../../styles/mixins.scss";
 .skill {
-  &__section {
-    position: relative;
-    z-index: 15;
-    display: flex;
-    // padding-left: 15%;
-    top: 10rem;
-    flex-direction: column;
-    backdrop-filter: blur(15px) brightness(0.7);
-  }
-
   &__title__section {
     display: flex;
     flex-direction: column;

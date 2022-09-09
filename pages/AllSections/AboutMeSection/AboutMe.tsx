@@ -6,6 +6,7 @@ import {
 } from "../../../components/AtomicComponents/Text/Text";
 import { urlFor } from "../../../client";
 import s from "../AboutMeSection/AboutMe.module.scss";
+import st from "../../../styles/section.module.scss";
 import { useState } from "react";
 
 export default function AboutMe({ aboutSection = [] }) {
@@ -16,11 +17,11 @@ export default function AboutMe({ aboutSection = [] }) {
   // console.log(textArray);
 
   return (
-    <section className={s.aboutMe__section}>
+    <section className={st.section}>
       {aboutSection &&
         aboutSection.map((post, index) => (
           <div key={index} className={s.aboutMe__container}>
-            <Heading2 className={s.aboutMe__title}>{post.title}</Heading2>
+            <Heading2 className={st.section__heading}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>
               <div className={s.aboutMe__imgContainer}>
                 <Image

@@ -1,12 +1,5 @@
-@import "../../../styles/globalBreakPoints.scss";
+@import "../../../styles/mixins.scss";
 .aboutMe {
-  &__section {
-    padding-block: 3rem;
-    z-index: 12;
-    position: relative;
-    backdrop-filter: blur(10px) brightness(0.7);
-  }
-
   &__container {
     padding-inline: 0.75rem;
     max-width: 700px;
@@ -19,17 +12,6 @@
       gap: 2rem;
     }
     color: var(--white);
-  }
-
-  &__title {
-    color: #fff;
-    margin-bottom: 2rem;
-    text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
-
-    @include breakpoint(sm) {
-      text-align: unset;
-    }
   }
 
   &__img {

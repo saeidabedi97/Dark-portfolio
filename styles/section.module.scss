@@ -1,0 +1,32 @@
+.section {
+  padding-block: 3rem;
+  z-index: 12;
+  position: relative;
+  backdrop-filter: blur(15px) brightness(0.7);
+
+  border-top: 1px solid yellow;
+  border-bottom: 1px solid yellow;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  &__heading {
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}

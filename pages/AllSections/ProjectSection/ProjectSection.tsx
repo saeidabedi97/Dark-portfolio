@@ -1,13 +1,13 @@
-import { HorizontalLine } from "../../../components/AtomicComponents/HorizontalLine/HorizontalLine";
 import {
   Button,
   Heading2,
-  PMedium,
   PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
 import s from "../ProjectSection/ProjectSection.module.scss";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useInView } from "react-intersection-observer";
+import st from "../../../styles/section.module.scss";
+
 export default function ProjectSection({ projectSection = [] }) {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -16,10 +16,9 @@ export default function ProjectSection({ projectSection = [] }) {
 
   console.log(projectSection);
   return (
-    <section className={s.ps} ref={ref}>
+    <section className={st.section} ref={ref}>
       <div className={s.ps__heading__container}>
-        <Heading2 className={s.ps__heading__text}>Projects</Heading2>
-        <HorizontalLine />
+        <Heading2 className={st.section__heading}>Projects</Heading2>
       </div>
       <div className={s.ps__details}>
         {/*First card*/}

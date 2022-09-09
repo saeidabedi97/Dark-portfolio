@@ -1,9 +1,9 @@
 .hero {
   position: relative;
   display: flex;
-  flexdirection: column;
-  justifycontent: center;
-  alignitems: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__container {
     display: flex;
