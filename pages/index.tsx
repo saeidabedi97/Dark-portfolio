@@ -8,10 +8,10 @@ import { Post } from "../pages/AllSections/AboutMeSection/typings";
 import NavBar from "../components/AtomicComponents/Navbar/NavBar";
 import { Stats } from "@react-three/drei";
 const AboutMe = lazy(
-  () => import("../../portfolio/pages/AllSections/AboutMeSection/AboutMe")
+  () => import("../pages/AllSections/AboutMeSection/AboutMe")
 );
 const SkillSection = lazy(
-  () => import("../../portfolio/pages/AllSections/SkillSection/SkillSection")
+  () => import("../pages/AllSections/SkillSection/SkillSection")
 );
 const ProjectSection = lazy(
   () => import("../pages/AllSections/ProjectSection/ProjectSection")
