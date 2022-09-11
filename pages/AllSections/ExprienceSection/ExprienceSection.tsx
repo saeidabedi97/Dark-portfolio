@@ -29,7 +29,6 @@ export default function ExprienceSection() {
       variants={boxVariant}
       initial="hidden"
       animate={control}
-      transition={{ duration: 1 }}
     >
       <Heading2 className={st.section__heading}>Work exprience</Heading2>
       <div className={s.expSection__content}>

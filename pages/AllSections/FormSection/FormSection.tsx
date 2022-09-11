@@ -28,7 +28,6 @@ function ContactForm() {
       variants={boxVariant}
       initial="hidden"
       animate={control}
-      transition={{ duration: 1 }}
     >
       <Heading2 className={st.section__heading}>Contact me</Heading2>
       <form className={s.form__section__form}>

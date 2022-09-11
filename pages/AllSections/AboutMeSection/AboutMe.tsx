@@ -45,7 +45,6 @@ export default function AboutMe({ aboutSection = [] }) {
                 variants={boxVariant}
                 initial="hidden"
                 animate={control}
-                transition={{ duration: 1 }}
               >
                 <Image
                   src={urlFor(post.mainImage).url()}

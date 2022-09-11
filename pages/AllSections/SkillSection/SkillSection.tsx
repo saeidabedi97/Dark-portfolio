@@ -29,7 +29,6 @@ export default function SkillSection() {
       variants={boxVariant}
       initial="hidden"
       animate={control}
-      transition={{ duration: 1 }}
     >
       <div className={s.skill__title__section}>
         <Heading2 className={st.section__heading}>Skill & tools </Heading2>

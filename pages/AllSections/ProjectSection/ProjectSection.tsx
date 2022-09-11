@@ -35,7 +35,6 @@ export default function ProjectSection({ projectSection = [] }) {
       variants={boxVariant}
       initial="hidden"
       animate={control}
-      transition={{ duration: 1 }}
     >
       <div className={s.ps__heading__container}>
         <Heading2 className={st.section__heading}>Projects</Heading2>
