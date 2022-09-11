@@ -54,8 +54,8 @@ function Rig({ children }) {
 
 function Ground(props) {
   const [floor, normal] = useTexture([
-    "/SurfaceImperfections003_1K_var1.jpg",
-    "/SurfaceImperfections003_1K_Normal.jpg",
+    "/SurfaceImperfections003_1K_var1.webp",
+    "/SurfaceImperfections003_1K_Normal.webp",
   ]);
   return (
     <Reflector resolution={1024} args={[8, 8]} {...props}>
