@@ -7,6 +7,7 @@
   font-size: clamp(3rem, 7.2vw, 6rem);
   line-height: 0.96153846;
   font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
 }
 
 .heading2 {
@@ -14,18 +15,21 @@
   font-size: clamp(2.5rem, 4.4vw, 3rem);
   line-height: 1;
   font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
 }
 
 .heading3 {
   font-size: calc(26 / var(--base-font-size) * 1rem);
   font-size: clamp(1.56rem, 1.8vw, 1.6rem);
   font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
 }
 
 .heading4 {
   font-size: calc(22 / var(--base-font-size) * 1rem);
   font-size: clamp(1.12rem, 1.5vw, 1.37rem);
   font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
 }
 
 .heading5 {
@@ -44,12 +48,14 @@
   font-size: calc(22 / var(--base-font-size) * 1rem);
   font-size: clamp(1.12rem, 1.52vw, 1.37rem);
   font-family: "Open Sans", sans-serif;
+  font-display: optional;
 }
 
 .pSmall {
   font-size: calc(16 / 16 * 1rem);
   font-size: clamp(1, 1.1vw, 1.1rem);
   font-family: "Open Sans", sans-serif;
+  font-display: optional;
 }
 
 .sectionTitle {

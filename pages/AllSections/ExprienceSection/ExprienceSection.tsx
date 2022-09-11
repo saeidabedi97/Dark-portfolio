@@ -1,26 +1,36 @@
-import { HorizontalLine } from "../../../components/AtomicComponents/HorizontalLine/HorizontalLine";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Heading2,
   PMedium,
   PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
 import s from "../ExprienceSection/ExprienceSection.module.scss";
-import {
-  useWindowSize,
-  useWindowWidth,
-  useWindowHeight,
-} from "@react-hook/window-size";
 import st from "../../../styles/section.module.scss";
+import { useEffect } from "react";
 
 export default function ExprienceSection() {
-  const [width, height] = useWindowSize({
-    wait: 0,
-    leading: true,
-  });
-  const onlyWidth = useWindowWidth();
-  const onlyHeight = useWindowHeight();
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
   return (
-    <section className={st.section}>
+    <motion.section
+      className={st.section}
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      transition={{ duration: 1 }}
+    >
       <Heading2 className={st.section__heading}>Work exprience</Heading2>
       <div className={s.expSection__content}>
         <div className={s.expSection__content__primary}>
@@ -60,6 +70,6 @@ export default function ExprienceSection() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

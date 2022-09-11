@@ -1,5 +1,6 @@
 import { extend } from "@react-three/fiber";
 import { Canvas } from "@react-three/fiber";
+import { motion } from "framer-motion";
 import {
   Heading1,
   PLarge,
@@ -14,7 +15,12 @@ export default function HeroPage() {
     <>
       <div className={s.hero}>
         <div className={s.hero__container}>
-          <div className={s.hero__container__inner}>
+          <motion.div
+            className={s.hero__container__inner}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 2 }}
+          >
             <Heading1 className={s.hero__container__title}>
               Saeid Abedi
             </Heading1>
@@ -22,7 +28,7 @@ export default function HeroPage() {
               FRONTEND DEVELOPER
             </PLarge>
             <Button className={s.hero__container__button}>view cv</Button>
-          </div>
+          </motion.div>
           <div className={s.hero__scene__container}>
             <Scene />
           </div>

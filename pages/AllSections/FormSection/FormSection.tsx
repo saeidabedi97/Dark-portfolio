@@ -1,13 +1,35 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Button,
   Heading2,
 } from "../../../components/AtomicComponents/Text/Text";
 import s from "../FormSection/FormSection.module.scss";
 import st from "../../../styles/section.module.scss";
+import { useEffect } from "react";
 
 function ContactForm() {
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
   return (
-    <section className={st.section}>
+    <motion.section
+      className={st.section}
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      transition={{ duration: 1 }}
+    >
       <Heading2 className={st.section__heading}>Contact me</Heading2>
       <form className={s.form__section__form}>
         <div>
@@ -32,7 +54,7 @@ function ContactForm() {
           <Button className={s.form__section__form__button}>Submit</Button>
         </div>
       </form>
-    </section>
+    </motion.section>
   );
 }
 

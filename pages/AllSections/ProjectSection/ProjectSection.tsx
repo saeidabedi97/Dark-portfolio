@@ -1,4 +1,4 @@
-// import { LazyLoadImage } from "react-lazy-load-image-component";
+import { motion, useAnimation } from "framer-motion";
 import LazyLoad from "react-lazyload";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useInView } from "react-intersection-observer";
@@ -13,15 +13,30 @@ import st from "../../../styles/section.module.scss";
 import s from "../ProjectSection/ProjectSection.module.scss";
 
 export default function ProjectSection({ projectSection = [] }) {
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0.5,
-  });
-
   console.log(projectSection);
 
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
-    <section className={st.section} ref={ref}>
+    <motion.section
+      className={st.section}
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      transition={{ duration: 1 }}
+    >
       <div className={s.ps__heading__container}>
         <Heading2 className={st.section__heading}>Projects</Heading2>
       </div>
@@ -103,6 +118,6 @@ export default function ProjectSection({ projectSection = [] }) {
         </div>
         <Button className={s.ps__details__button}>Show more...</Button>
       </div>
-    </section>
+    </motion.section>
   );
 }

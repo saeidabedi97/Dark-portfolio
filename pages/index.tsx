@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { motion, useScroll } from "framer-motion";
 import LazyLoad from "react-lazyload";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -37,6 +38,8 @@ const Loading = () => {
 };
 
 const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
+  const { scrollYProgress } = useScroll();
+
   return (
     <div>
       <Head>
@@ -63,6 +66,19 @@ const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
           rel="stylesheet"
         ></link>
       </Head>
+      <motion.div
+        style={{
+          scaleX: scrollYProgress,
+          background: "white",
+          height: "10px",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          transformOrigin: "0%",
+          zIndex: 200,
+        }}
+      ></motion.div>
       <NavBar />
       <main>
         <Stats />
