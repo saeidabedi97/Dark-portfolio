@@ -10,10 +10,6 @@ extend({ Canvas });
 import s from "../HeroPage/HeroPage.module.scss";
 
 export default function HeroPage() {
-  const loading = () => {
-    return <div style={{ fontSize: "45px", color: "white" }}>Loading...</div>;
-  };
-
   return (
     <>
       <div className={s.hero}>

@@ -6,12 +6,12 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 function SlideShow() {
   return (
-    <div style={{ width: "100vw" }}>
+    <div>
       <Splide
         options={{
           // type: "loop",
           mediaQuery: "min",
-          // gap: "5px",
+          gap: "55px",
           drag: "free",
           // arrows: false,
           pagination: false,
@@ -22,7 +22,7 @@ function SlideShow() {
             },
 
             1000: {
-              perPage: 4,
+              perPage: 5,
             },
           },
           autoScroll: {
@@ -36,67 +36,67 @@ function SlideShow() {
         extensions={{ AutoScroll }}
       >
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/javascript.png"
               alt="javascript"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/typescript.png"
               alt="typescript"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/react.jpg"
               alt="react"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/htmlnew.png"
               alt="hmtl"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/css.png"
               alt="css"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div style={{ width: "25%" }}>
+          <div>
             <Image
               src="/python.png"
               alt="python"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               layout={"responsive"}
             />
           </div>

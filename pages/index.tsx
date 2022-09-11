@@ -1,12 +1,14 @@
 import { Suspense, lazy } from "react";
+import LazyLoad from "react-lazyload";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { sanityClient } from "../client";
-import HeroPage from "./AllSections/HeroPage/HeroPage";
 import { Post } from "../pages/AllSections/AboutMeSection/typings";
 
 import NavBar from "../components/AtomicComponents/Navbar/NavBar";
 import { Stats } from "@react-three/drei";
+
+const HeroPage = lazy(() => import("../pages/AllSections/HeroPage/HeroPage"));
 const AboutMe = lazy(
   () => import("../pages/AllSections/AboutMeSection/AboutMe")
 );
@@ -25,6 +27,14 @@ interface Props {
   aboutSection: Post[];
   projectSection: Post[];
 }
+
+const Loading = () => {
+  return (
+    <h1 style={{ fontSize: "105px", color: "white", zIndex: 100 }}>
+      Loading...
+    </h1>
+  );
+};
 
 const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
   return (
@@ -56,15 +66,21 @@ const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
       <NavBar />
       <main>
         <Stats />
-
-        <HeroPage />
-        <AboutMe aboutSection={aboutSection} />
-        <SkillSection />
-
-        <ExprienceSection />
-
-        <ProjectSection projectSection={projectSection} />
-
+        <Suspense fallback={<Loading />}>
+          <HeroPage />
+        </Suspense>
+        <LazyLoad once offset={100}>
+          <AboutMe aboutSection={aboutSection} />
+        </LazyLoad>
+        <LazyLoad once offset={100}>
+          <SkillSection />
+        </LazyLoad>
+        <LazyLoad once offset={100}>
+          <ExprienceSection />
+        </LazyLoad>
+        <LazyLoad once offset={100}>
+          <ProjectSection projectSection={projectSection} />
+        </LazyLoad>
         <ContactForm />
       </main>
     </div>

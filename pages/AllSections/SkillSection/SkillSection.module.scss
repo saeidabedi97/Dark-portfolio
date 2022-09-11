@@ -9,18 +9,13 @@
     width: 100vw;
   }
 
-  &__title {
-    color: var(--white);
-    animation: glow 1s ease-in-out infinite alternate;
-  }
-
   &__content {
     display: flex;
     flex-direction: row;
     position: relative;
     // justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    // width: 100%;
     @include breakpoint(sm) {
       display: flex;
       gap: 2rem;
@@ -28,18 +23,9 @@
     color: var(--white);
   }
 
-  &__cards {
-    border: 3px solid var(--american-orange);
-    width: 20vw;
-  }
-
-  &__card {
-    padding: 16px;
-  }
-
-  &__inner__text {
-    color: var(--white);
-  }
+  // &__inner__text {
+  //   color: var(--white);
+  // }
 }
 
 @-webkit-keyframes glow {

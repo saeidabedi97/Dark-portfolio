@@ -2,6 +2,7 @@ import { HorizontalLine } from "../../../components/AtomicComponents/HorizontalL
 import {
   Heading2,
   PMedium,
+  PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
 import s from "../ExprienceSection/ExprienceSection.module.scss";
 import {
@@ -27,16 +28,18 @@ export default function ExprienceSection() {
             <PMedium className={s.expSection__content__primary__title}>
               Harbour Space
             </PMedium>
-            <PMedium className={s.expSection__content__primary__date}>
+            <PSmall className={s.expSection__content__primary__date}>
               02/2022 - 06/2022
-            </PMedium>
+            </PSmall>
           </div>
 
           <div className={s.expSection__content__primary__details__container}>
-            <PMedium className={s.expSection__content__primary__details}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a
-              eleifend lacus feugiat. Donec fringilla varius augue non.
-            </PMedium>
+            <PSmall className={s.expSection__content__primary__details}>
+              I worked in Harbour Space as a frontend developer. my duty was to
+              take care of content of the their website and develope websites
+              for students. for example i created a page where students can
+              check their grade and leave feedback for the class.
+            </PSmall>
           </div>
         </div>
         <div className={s.expSection__content__secondary}>
@@ -44,15 +47,16 @@ export default function ExprienceSection() {
             <PMedium className={s.expSection__content__secondary__title}>
               Rastak company
             </PMedium>
-            <PMedium className={s.expSection__content__secondary__date}>
+            <PSmall className={s.expSection__content__secondary__date}>
               02/2021 - 05/2021
-            </PMedium>
+            </PSmall>
           </div>
           <div className={s.expSection__content__secondary__details__container}>
-            <PMedium className={s.expSection__content__secondary__details}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a
-              eleifend lacus feugiat. Donec fringilla varius augue non.
-            </PMedium>
+            <PSmall className={s.expSection__content__secondary__details}>
+              I worked in Rastak as an intern for 3 months. There i was a member
+              of a team where we were desiging the required schemas for mobile
+              and web apps.
+            </PSmall>
           </div>
         </div>
       </div>

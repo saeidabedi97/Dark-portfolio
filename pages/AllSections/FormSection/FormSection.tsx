@@ -10,25 +10,27 @@ function ContactForm() {
     <section className={st.section}>
       <Heading2 className={st.section__heading}>Contact me</Heading2>
       <form className={s.form__section__form}>
-        <label htmlFor="fname" className={s.form__section__form__label}>
-          First name:
-        </label>
-        <br />
-        <input type="text" id="fname" name="fname" />
-        <br />
-        <label htmlFor="Email" className={s.form__section__form__label}>
-          Email:
-        </label>
-        <br />
-        <input type="text" id="Email" name="Email" />
-        <br />
-        <label htmlFor="RFC" className={s.form__section__form__label}>
-          Reason for contacting
-        </label>
-        <br />
-        <input type="text" id="RFC" name="RFC" />
-        <br />
-        <Button className={s.form__section__form__button}>Submit</Button>
+        <div>
+          <label htmlFor="fname" className={s.form__section__form__label}>
+            First name:
+          </label>
+          <input type="text" id="fname" name="fname" />
+        </div>
+        <div>
+          <label htmlFor="Email" className={s.form__section__form__label}>
+            Email:
+          </label>
+          <input type="email" id="Email" name="Email" />
+        </div>
+        <div>
+          <label htmlFor="RFC" className={s.form__section__form__label}>
+            Reason for contacting
+          </label>
+          <input type="text" id="RFC" name="RFC" />
+        </div>
+        <div>
+          <Button className={s.form__section__form__button}>Submit</Button>
+        </div>
       </form>
     </section>
   );
