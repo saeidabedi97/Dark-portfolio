@@ -11,10 +11,15 @@ import s from "../AboutMeSection/AboutMe.module.scss";
 import st from "../../../styles/section.module.scss";
 import { useEffect } from "react";
 
-// const boxVariant = {
-//   visible: { opacity: 1, scale: 1 },
-//   hidden: { opacity: 0, scale: 0 },
-// };
+const boxVariant = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+};
+
+const transitionToRight = {
+  start: { x: -200, opacity: 0 },
+  end: { x: 0, opacity: 1 },
+};
 
 export default function AboutMe({ aboutSection = [] }) {
   console.log(aboutSection);
@@ -23,23 +28,39 @@ export default function AboutMe({ aboutSection = [] }) {
   const textArray = text?.split(".");
   // console.log(textArray);
 
-  // const control = useAnimation();
-  // const [ref, inView] = useInView();
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  const [ref2, inView2] = useInView({ threshold: 0.5 });
 
-  // useEffect(() => {
-  //   if (inView) {
-  //     control.start("visible");
-  //   }
-  // }, [control, inView]);
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
   return (
     <section className={st.section}>
       {aboutSection &&
         aboutSection.map((post, index) => (
-          <div key={index} className={s.aboutMe__container} id="about">
+          <motion.div
+            key={index}
+            className={s.aboutMe__container}
+            id="about"
+            ref={ref}
+            variants={boxVariant}
+            initial="hidden"
+            animate={control}
+          >
             <Heading2 className={st.section__heading}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>
-              <div className={s.aboutMe__imgContainer}>
+              <motion.div
+                className={s.aboutMe__imgContainer}
+                ref={ref2}
+                variants={transitionToRight}
+                initial="start"
+                animate={inView2 ? { x: 0, opacity: 1 } : ""}
+                transition={{ duration: 1 }}
+              >
                 <Image
                   src={urlFor(post.mainImage).url()}
                   alt="my picture"
@@ -48,7 +69,7 @@ export default function AboutMe({ aboutSection = [] }) {
                   width={2898}
                   height={4096}
                 />
-              </div>
+              </motion.div>
               <div className={s.aboutMe__txtContainer}>
                 <PSmall>{textArray[0]}.</PSmall>
                 <PSmall>{textArray[1]}.</PSmall>
@@ -56,7 +77,7 @@ export default function AboutMe({ aboutSection = [] }) {
                 <PSmall>{textArray[3]}.</PSmall>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
     </section>
   );

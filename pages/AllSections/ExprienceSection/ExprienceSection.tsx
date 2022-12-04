@@ -11,11 +11,14 @@ import { useEffect } from "react";
 
 export default function ExprienceSection() {
   const boxVariant = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   };
+
   const control = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView) {
@@ -29,9 +32,12 @@ export default function ExprienceSection() {
       variants={boxVariant}
       initial="hidden"
       animate={control}
+      transition={{ delay: 1 }}
     >
-      <Heading2 className={st.section__heading}>Work exprience</Heading2>
-      <div className={s.expSection__content} id="experience">
+      <Heading2 className={st.section__heading} id="experience">
+        Work exprience
+      </Heading2>
+      <div className={s.expSection__content}>
         <div className={s.expSection__content__primary}>
           <div className={s.expSection__content__primary__title__container}>
             <PMedium className={s.expSection__content__primary__title}>

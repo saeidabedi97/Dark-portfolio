@@ -16,11 +16,13 @@ export default function ProjectSection({ projectSection = [] }) {
   console.log(projectSection);
 
   const boxVariant = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   };
   const control = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView) {

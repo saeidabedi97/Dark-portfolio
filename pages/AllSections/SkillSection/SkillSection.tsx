@@ -15,7 +15,9 @@ export default function SkillSection() {
     hidden: { opacity: 0 },
   };
   const control = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     if (inView) {
