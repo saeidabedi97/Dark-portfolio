@@ -11,10 +11,10 @@ import s from "../AboutMeSection/AboutMe.module.scss";
 import st from "../../../styles/section.module.scss";
 import { useEffect } from "react";
 
-const boxVariant = {
-  visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 0 },
-};
+// const boxVariant = {
+//   visible: { opacity: 1, scale: 1 },
+//   hidden: { opacity: 0, scale: 0 },
+// };
 
 export default function AboutMe({ aboutSection = [] }) {
   console.log(aboutSection);
@@ -23,29 +23,23 @@ export default function AboutMe({ aboutSection = [] }) {
   const textArray = text?.split(".");
   // console.log(textArray);
 
-  const control = useAnimation();
-  const [ref, inView] = useInView();
+  // const control = useAnimation();
+  // const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     control.start("visible");
+  //   }
+  // }, [control, inView]);
 
   return (
     <section className={st.section}>
       {aboutSection &&
         aboutSection.map((post, index) => (
-          <div key={index} className={s.aboutMe__container}>
+          <div key={index} className={s.aboutMe__container} id="about">
             <Heading2 className={st.section__heading}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>
-              <motion.div
-                className={s.aboutMe__imgContainer}
-                ref={ref}
-                variants={boxVariant}
-                initial="hidden"
-                animate={control}
-              >
+              <div className={s.aboutMe__imgContainer}>
                 <Image
                   src={urlFor(post.mainImage).url()}
                   alt="my picture"
@@ -54,20 +48,13 @@ export default function AboutMe({ aboutSection = [] }) {
                   width={2898}
                   height={4096}
                 />
-              </motion.div>
-              <motion.div
-                className={s.aboutMe__txtContainer}
-                ref={ref}
-                variants={boxVariant}
-                initial="hidden"
-                animate={control}
-                transition={{ duration: 1 }}
-              >
+              </div>
+              <div className={s.aboutMe__txtContainer}>
                 <PSmall>{textArray[0]}.</PSmall>
                 <PSmall>{textArray[1]}.</PSmall>
                 <PSmall>{textArray[2]}.</PSmall>
                 <PSmall>{textArray[3]}.</PSmall>
-              </motion.div>
+              </div>
             </div>
           </div>
         ))}

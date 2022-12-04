@@ -23,7 +23,7 @@
     "client.tsx",
     "pages/index.tsx",
     "components/AtomicComponents/Floor/Floor.jsx",
-    "pages/AllSections/AboutMeSection/AboutMe.tsx",
+    "pages/AllSections/AboutMeSection/AboutMe.tsxx",
     "components/AtomicComponents/Text/Text.js"
   ],
   "exclude": ["node_modules"]

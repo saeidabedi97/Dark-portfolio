@@ -31,7 +31,7 @@ export default function ExprienceSection() {
       animate={control}
     >
       <Heading2 className={st.section__heading}>Work exprience</Heading2>
-      <div className={s.expSection__content}>
+      <div className={s.expSection__content} id="experience">
         <div className={s.expSection__content__primary}>
           <div className={s.expSection__content__primary__title__container}>
             <PMedium className={s.expSection__content__primary__title}>

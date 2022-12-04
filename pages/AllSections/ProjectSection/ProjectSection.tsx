@@ -36,7 +36,7 @@ export default function ProjectSection({ projectSection = [] }) {
       initial="hidden"
       animate={control}
     >
-      <div className={s.ps__heading__container}>
+      <div className={s.ps__heading__container} id="projects">
         <Heading2 className={st.section__heading}>Projects</Heading2>
       </div>
       <div className={s.ps__details}>

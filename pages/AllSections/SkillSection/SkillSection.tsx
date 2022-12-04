@@ -11,8 +11,8 @@ import { useEffect } from "react";
 
 export default function SkillSection() {
   const boxVariant = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   };
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -29,6 +29,7 @@ export default function SkillSection() {
       variants={boxVariant}
       initial="hidden"
       animate={control}
+      id="skills"
     >
       <div className={s.skill__title__section}>
         <Heading2 className={st.section__heading}>Skill & tools </Heading2>
