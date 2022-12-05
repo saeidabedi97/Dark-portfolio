@@ -3,18 +3,12 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import {
   Heading2,
-  PMedium,
   PSmall,
 } from "../../../components/AtomicComponents/Text/Text";
 import { urlFor } from "../../../client";
 import s from "../AboutMeSection/AboutMe.module.scss";
 import st from "../../../styles/section.module.scss";
 import { useEffect } from "react";
-
-const boxVariant = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 },
-};
 
 const transitionToRight = {
   start: { x: -100, opacity: 0 },
@@ -26,11 +20,8 @@ const transitionToLeft = {
 };
 
 export default function AboutMe({ aboutSection = [] }) {
-  console.log(aboutSection);
-
   const text = aboutSection[0]?.body[0]?.children[0]?.text;
   const textArray = text?.split(".");
-  // console.log(textArray);
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -46,15 +37,7 @@ export default function AboutMe({ aboutSection = [] }) {
     <section className={st.section}>
       {aboutSection &&
         aboutSection.map((post, index) => (
-          <motion.div
-            key={index}
-            className={s.aboutMe__container}
-            id="about"
-            ref={ref}
-            variants={boxVariant}
-            initial="hidden"
-            animate={control}
-          >
+          <motion.div key={index} className={s.aboutMe__container} id="about">
             <Heading2 className={st.section__heading}>{post.title}</Heading2>
             <div className={s.aboutMe__content}>
               <motion.div

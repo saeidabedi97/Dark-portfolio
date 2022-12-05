@@ -44,36 +44,36 @@ const Home: NextPage = ({ aboutSection, projectSection }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* Scroll progress bar*/}
-      <motion.div
-        style={{
-          scaleX: scrollYProgress,
-          background: "white",
-          height: "10px",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          transformOrigin: "0%",
-          zIndex: 200,
-        }}
-      ></motion.div>
-      {/* Scroll progress bar*/}
       <main>
+        {/* Scroll progress bar*/}
+        <motion.div
+          style={{
+            scaleX: scrollYProgress,
+            background: "white",
+            height: "10px",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            transformOrigin: "0%",
+            zIndex: 200,
+          }}
+        ></motion.div>
+        {/* Scroll progress bar*/}
         <Suspense fallback={<Loading />}>
           <HeroPage />
+          <AboutMe aboutSection={aboutSection} />
+          <SkillSection />
+          <ExprienceSection />
+          <ProjectSection projectSection={projectSection} />
+          <ContactForm />
         </Suspense>
-        <AboutMe aboutSection={aboutSection} />
-        <SkillSection />
-        <ExprienceSection />
-        <ProjectSection projectSection={projectSection} />
-        <ContactForm />
       </main>
     </div>
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const postsQuery = `*[_type == "AboutMe"]{
   _id,
   title,
@@ -91,8 +91,7 @@ export const getServerSideProps = async () => {
 `;
   const aboutSection = await sanityClient.fetch(postsQuery);
   const projectSection = await sanityClient.fetch(projectQuery);
-  console.log("About me", aboutSection);
-  console.log("project", projectSection);
+
   return {
     props: {
       aboutSection,
