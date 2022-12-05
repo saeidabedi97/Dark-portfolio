@@ -42,7 +42,7 @@
         flex-direction: row;
         gap: 2vw;
         &__label1 {
-          color: blue;
+          color: rgb(71, 71, 240);
           font-weight: 1000;
         }
 
@@ -54,57 +54,6 @@
         &__label3 {
           color: lightcoral;
           font-weight: 1000;
-        }
-      }
-    }
-
-    &__card2 {
-      padding: 2rem;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
-      @include breakpoint(md) {
-        display: flex;
-        flex-direction: row;
-      }
-      &__text__container {
-        color: var(--white);
-        max-width: 350px;
-
-        @include breakpoint(md) {
-          position: relative;
-          max-width: 650px;
-        }
-      }
-
-      &__progress {
-        display: flex;
-        flex-direction: row;
-        gap: 2vw;
-        &__label1 {
-          color: blue;
-          font-weight: 1000;
-        }
-
-        &__label2 {
-          color: yellow;
-          font-weight: 1000;
-        }
-
-        &__label3 {
-          color: lightcoral;
-          font-weight: 1000;
-        }
-      }
-
-      &__figure__container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include breakpoint(md) {
-          padding-left: 4%;
-          // padding-right: 2%;
         }
       }
     }

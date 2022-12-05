@@ -4,55 +4,45 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/skyblue";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
-// interface contentTypes {
-//    { title: string; body: string; img: string };
-//   card2: { title: string; body: string; img: string };
-//   card3: { title: string; body: string; img: string };
-//   card4: { title: string; body: string; img: string };
-//   card5: { title: string; body: string; img: string };
-//   card6: { title: string; body: string; img: string };
-//   card7: { title: string; body: string; img: string };
-// }
+const slideContent = [
+  {
+    title: "JavaScript",
+    body: "I use JavaScript to make interactive websites.",
+    img: "/javascript.png",
+  },
+  {
+    title: "TypeScript",
+    body: "Sometimes to make my code more organized and type safe i use TypeScript.",
+    img: "/typescript.png",
+  },
+  {
+    title: "React",
+    body: "Every Frontender must know a framework or library to create interactive websites.",
+    img: "/react.jpg",
+  },
+  {
+    title: "Html",
+    body: "The markup langauge to describe the content of the website. ",
+    img: "/htmlnew.png",
+  },
+  {
+    title: "CSS",
+    body: "The building block and styling of any website.  ",
+    img: "/css.png",
+  },
+  {
+    title: "VueJs",
+    body: "A framework with very well syntax to develop websites.  ",
+    img: "/vue.png",
+  },
+  {
+    title: "NextJs",
+    body: "A framework for React which has more features.  ",
+    img: "/next.png",
+  },
+];
 
 function SlideShow() {
-  const slideContent = [
-    {
-      title: "JavaScript",
-      body: "I use JavaScript to make interactive websites.",
-      img: "/javascript.png",
-    },
-    {
-      title: "TypeScript",
-      body: "Sometimes to make my code more organized and type safe i use TypeScript.",
-      img: "/typescript.png",
-    },
-    {
-      title: "React",
-      body: "Every Frontender must know a framework or library to create interactive websites.",
-      img: "/react.jpg",
-    },
-    {
-      title: "Html",
-      body: "The markup langauge to describe the content of the website. ",
-      img: "/htmlnew.png",
-    },
-    {
-      title: "CSS",
-      body: "The building block and styling of any website.  ",
-      img: "/css.png",
-    },
-    {
-      title: "VueJs",
-      body: "A framework with very well syntax to develop websites.  ",
-      img: "/vue.png",
-    },
-    {
-      title: "NextJs",
-      body: "A framework for React which has more features.  ",
-      img: "/next.png",
-    },
-  ];
-
   return (
     <div>
       <Splide

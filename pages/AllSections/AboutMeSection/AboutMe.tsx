@@ -17,7 +17,11 @@ const boxVariant = {
 };
 
 const transitionToRight = {
-  start: { x: -200, opacity: 0 },
+  start: { x: -100, opacity: 0 },
+  end: { x: 0, opacity: 1 },
+};
+const transitionToLeft = {
+  start: { x: 200, opacity: 0 },
   end: { x: 0, opacity: 1 },
 };
 
@@ -70,12 +74,19 @@ export default function AboutMe({ aboutSection = [] }) {
                   height={4096}
                 />
               </motion.div>
-              <div className={s.aboutMe__txtContainer}>
+              <motion.div
+                className={s.aboutMe__txtContainer}
+                ref={ref}
+                variants={transitionToLeft}
+                initial="start"
+                animate={inView ? { x: 0, opacity: 1 } : ""}
+                transition={{ duration: 1 }}
+              >
                 <PSmall>{textArray[0]}.</PSmall>
                 <PSmall>{textArray[1]}.</PSmall>
                 <PSmall>{textArray[2]}.</PSmall>
                 <PSmall>{textArray[3]}.</PSmall>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
